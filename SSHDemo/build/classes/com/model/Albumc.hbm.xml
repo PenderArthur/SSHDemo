@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-5-11 13:11:05 by Hibernate Tools 5.2.1.Final -->
+<hibernate-mapping>
+    <class name="com.model.Albumc" table="albumc" catalog="b" optimistic-lock="version">
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="album" class="com.model.Album" fetch="select">
+            <column name="album_id" not-null="true" />
+        </many-to-one>
+        <many-to-one name="user" class="com.model.User" fetch="select">
+            <column name="user_id" not-null="true" />
+        </many-to-one>
+        <property name="text" type="string">
+            <column name="text" not-null="true" />
+        </property>
+        <property name="nextId" type="java.lang.Integer">
+            <column name="next_id" />
+        </property>
+    </class>
+</hibernate-mapping>

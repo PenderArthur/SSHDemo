@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd" >
+
+<hibernate-reverse-engineering>
+  <table-filter match-catalog="bymood" match-name="ur"/>
+  <table-filter match-catalog="bymood" match-name="ur_fd"/>
+  <table-filter match-catalog="bymood" match-name="ur_fd_ct"/>
+  <table-filter match-catalog="bymood" match-name="ur_md"/>
+  <table-filter match-catalog="bymood" match-name="ur_md_ct"/>
+  <table-filter match-catalog="bymood" match-name="ur_me"/>
+</hibernate-reverse-engineering>

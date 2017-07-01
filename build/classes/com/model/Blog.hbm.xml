@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-5-11 13:11:05 by Hibernate Tools 5.2.1.Final -->
+<hibernate-mapping>
+    <class name="com.model.Blog" table="blog" catalog="b" optimistic-lock="version">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="foreign">
+                <param name="property">user</param>
+            </generator>
+        </id>
+        <property name="title" type="string">
+            <column name="title" length="100" not-null="true" />
+        </property>
+        <property name="content" type="string">
+            <column name="content" length="65535" not-null="true" />
+        </property>
+        <property name="type" type="string">
+            <column name="type" length="10" not-null="true" />
+        </property>
+        <property name="scope" type="string">
+            <column name="scope" length="10" not-null="true" />
+        </property>
+        <property name="hit" type="int">
+            <column name="hit" not-null="true" />
+        </property>
+        <set name="blogcs" table="blogc" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="blog_id" not-null="true" />
+            </key>
+            <one-to-many class="com.model.Blogc" />
+        </set>
+        <set name="collections" table="collection" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="blog_id" not-null="true" />
+            </key>
+            <one-to-many class="com.model.Collection" />
+        </set>
+    </class>
+</hibernate-mapping>
